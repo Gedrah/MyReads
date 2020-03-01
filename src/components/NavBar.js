@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Navbar extends React.Component {
+export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -14,8 +14,11 @@ export default class Navbar extends React.Component {
 
 
     navBarStyle = {
-        height: '47px',
-        fontSize: '35px'
+        height: '50px',
+        fontSize: '35px',
+        position: 'fixed',
+        backgroundColor: 'aqua',
+        width: '100%'
     };
 
 }
