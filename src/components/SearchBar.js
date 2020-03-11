@@ -1,15 +1,31 @@
 import React from 'react';
+import {withRouter} from "react-router-dom";
 
-export default class SearchBar extends React.Component {
+class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
 
+    goToBooksPage() {
+        this.props.history.push('/books');
+    }
+
     render() {
         return (
-            <div>Search</div>
+            <div>
+                <span style={this.booksStyle} onClick={() => this.goToBooksPage() }>Books</span>
+                Search
+                <input onChange={this.props.searchBooks}/>
+            </div>
         );
     }
 
+    booksStyle = {
+        marginRight: '10px'
+    };
 }
+
+
+
+export default withRouter(SearchBar)

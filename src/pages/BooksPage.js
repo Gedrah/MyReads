@@ -3,8 +3,8 @@ import NavBar from "../components/NavBar";
 import BookShelf from "../components/BookShelf";
 
 export default class BooksPage extends React.Component {
-    shelfs = ['Currently Reading'];
-// , 'Want to Read', 'Read'
+    shelfs = ['Currently Reading','Want to Read', 'Read'];
+
     constructor(props) {
         super(props);
         this.state = {};
@@ -22,5 +22,4 @@ export default class BooksPage extends React.Component {
             </div>
         );
     }
-
 }

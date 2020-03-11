@@ -33,7 +33,8 @@ export default class BookShelf extends React.Component {
     }
 
     styleShelf = {
-       height: '500px'
+        height: '500px',
+        marginBottom: '500px'
     };
 
     bookshelfTitle = {
