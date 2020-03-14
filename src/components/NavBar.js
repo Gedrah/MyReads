@@ -11,10 +11,14 @@ class NavBar extends React.Component {
         this.props.history.push('/search');
     }
 
+    goToHome() {
+        this.props.history.push('/');
+    }
+
     render() {
         return (
           <div style={this.navBarStyle}>
-              <span style={this.titleStyle}>My Reads</span>
+              <span style={this.titleStyle} onClick={() => this.goToHome() }>My Reads</span>
               <span style={this.searchStyle} onClick={() => this.goToSearch() }>Search</span>
           </div>
         );

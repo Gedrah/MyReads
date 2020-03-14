@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
     }
 
     goToBooksPage() {
-        this.props.history.push('/books');
+        this.props.history.push('/');
     }
 
     render() {

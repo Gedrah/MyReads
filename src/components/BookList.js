@@ -2,14 +2,9 @@ import React from 'react';
 import Book from "./Book";
 
 export default class BookList extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {};
-    }
-
-    componentWillMount() {
-        console.log(this.props.bookList);
     }
 
     render() {
@@ -17,7 +12,7 @@ export default class BookList extends React.Component {
             <div style={this.listStyle}>
                 {
                     this.props.bookList.map((book, index) => {
-                        return <Book key={index} book={book}/>
+                        return <Book updateList={this.props.updateList} key={index} book={book}/>
                     })
                 }
             </div>

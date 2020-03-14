@@ -12,15 +12,27 @@ export default class SearchPage extends React.Component {
         this.searchBooks = this.searchBooks.bind(this);
     }
 
+    saveSearchResult(booksList) {
+        const booksInShelf = JSON.parse(localStorage.getItem('books'));
+        const searchListBooks = booksList.map((book) => {
+            for (let i = 0; i < booksInShelf.length; i++) {
+                if (booksInShelf[i].id === book.id) {
+                    book.shelf = booksInShelf[i].shelf;
+                }
+            }
+            return book;
+        });
+        this.setState({books: searchListBooks});
+    }
 
     searchBooks(event) {
         if (event.target.value) {
             search(event.target.value).then((booksList) => {
-                    console.log(booksList);
+                    // console.log(booksList);
                     if (booksList.error) {
                         this.setState({books: booksList.items})
                     } else {
-                        this.setState({books: booksList});
+                        this.saveSearchResult(booksList);
                     }
                 }
             );
