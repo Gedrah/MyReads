@@ -1,7 +1,7 @@
 ## My Reads
 
 MyReads is a web app made in React that let you search for books that you are interested in.<br>
-You can search for a book and add it to your bookshelf (Currently reading, Want to Read or Read) so you can keep track on it. 
+You can search for a book and add it to your bookshelf (Currently reading, Want to Read or Read)<br> so you can keep track on it.<br> 
 You can also have more information about the book by clicking on the picture.
 
 ## Available Scripts
