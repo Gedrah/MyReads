@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from "./Book";
+import '../css/BookList.css'
 
 export default class BookList extends React.Component {
     constructor(props) {
@@ -9,22 +10,17 @@ export default class BookList extends React.Component {
 
     render() {
         return (
-            <div style={this.listStyle}>
-                {
-                    this.props.bookList.map((book, index) => {
-                        return <Book updateList={this.props.updateList} key={index} book={book}/>
-                    })
-                }
+            <div className="books-list">
+                <ol className="books-grid">
+                    {
+                        this.props.bookList.map((book, index) => {
+                            return (
+                                <Book updateList={this.props.updateList} key={index} book={book}/>
+                            )
+                        })
+                    }
+                </ol>
             </div>
         );
     }
-
-    listStyle = {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        width: '90%',
-        margin: '0 auto',
-        maxWidth: '100%'
-    };
-
 }

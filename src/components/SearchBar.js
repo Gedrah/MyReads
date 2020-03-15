@@ -1,5 +1,7 @@
 import React from 'react';
 import {withRouter} from "react-router-dom";
+import '../css/SearchBar.css';
+
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -14,16 +16,17 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div>
-                <span style={this.booksStyle} onClick={() => this.goToBooksPage() }>Books</span>
-                Search
-                <input onChange={this.props.searchBooks}/>
+                <div className="search-books">
+                    <div className="search-books-bar">
+                        <button className="close-search" onClick={() => this.goToBooksPage() }>Close</button>
+                        <div className="search-books-input-wrapper">
+                            <input type="text" placeholder="Search by title or author" onChange={this.props.searchBooks}/>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
-
-    booksStyle = {
-        marginRight: '10px'
-    };
 }
 
 

@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from "../components/NavBar";
 import BookShelf from "../components/BookShelf";
 import {getAll} from "../BooksAPI";
+import "../css/BooksPage.css"
 
 export default class BooksPage extends React.Component {
     constructor(props) {
@@ -43,13 +44,15 @@ export default class BooksPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="books-page">
                 <NavBar/>
-                {
-                    this.state.shelfs.map((shelf, index) => {
-                        return <BookShelf key={index} currentShelf={shelf.title} books={shelf.books} updateList={this.getBooksList}/>
-                    })
-                }
+                <div className="list-books-content">
+                    {
+                        this.state.shelfs.map((shelf, index) => {
+                            return <BookShelf key={index} currentShelf={shelf.title} books={shelf.books} updateList={this.getBooksList}/>
+                        })
+                    }
+                </div>
             </div>
         );
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from "react-router-dom";
+import "../css/NavBar.css"
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -17,33 +18,12 @@ class NavBar extends React.Component {
 
     render() {
         return (
-          <div style={this.navBarStyle}>
-              <span style={this.titleStyle} onClick={() => this.goToHome() }>My Reads</span>
-              <span style={this.searchStyle} onClick={() => this.goToSearch() }>Search</span>
+          <div className="list-books-title">
+              <h1 onClick={() => this.goToHome() }>My Reads</h1>
+              <button className="open-search" onClick={() => this.goToSearch() }>Search</button>
           </div>
         );
     }
-
-
-    navBarStyle = {
-        height: '50px',
-        fontSize: '33px',
-        backgroundColor: 'aqua',
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'space-between',
-        marginTop: '-50px',
-        position: 'fixed'
-    };
-
-    titleStyle = {
-        marginLeft: '10px'
-    };
-
-    searchStyle = {
-        marginRight: '10px'
-    };
-
 }
 
 export default withRouter(NavBar);
