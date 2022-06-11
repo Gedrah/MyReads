@@ -1,5 +1,8 @@
 ## My Reads
 
+
+![Screenshot My Reads](https://github.com/Gedrah/MyReads/blob/master/Screenshot%202022-06-11%20021804.png)
+
 MyReads is a web app made in React that let you search for books that you are interested in.<br>
 You can search for a book and add it to your bookshelf (Currently reading, Want to Read or Read)<br> so you can keep track on it.<br> 
 You can also have more information about the book by clicking on the picture.
